@@ -1,0 +1,33 @@
+plugins {
+    id 'idea'
+}
+
+group = 'com.jisungvalue.javabackendtemplate'
+version = '0.0.1'
+
+ext {
+    javaVersion = '21'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+
+    dependencies {
+        testImplementation platform('org.junit:junit-bom:5.10.0')
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
