@@ -1,1 +1,13 @@
 rootProject.name = 'JavaBackendTemplate'
+include 'adapters-in'
+include 'adapters-out'
+include 'application'
+include 'boot'
+include 'core'
+include 'domain'
+include 'ports'
+
+rootProject.children.each {project ->
+    project.buildFileName = "${project.name}.gradle"
+}
+
